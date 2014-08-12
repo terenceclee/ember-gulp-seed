@@ -18,7 +18,7 @@
 	}
 
 	// Inject dependencies
-	AppController.$inject = ['$rootScope', '$scope']
+	AppController.$inject = ['$rootScope', '$scope'];
 
 	// Register app
 	angular.module('app', [
@@ -39,6 +39,6 @@
 			redirectTo: '/'
 		});
 
-	});
+	}]);
 
 })();

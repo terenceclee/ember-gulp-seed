@@ -72,9 +72,9 @@ function ServeApp() {
     .listen(parent.CONFIG.serverPort);
 
     // Open the page
-    parent.open('http://local.room4debate.com:' + parent.CONFIG.serverPort);
+    parent.open('http://localhost:' + parent.CONFIG.serverPort);
 
-    console.log('Server listening on http://local.room4debate.com:' + parent.CONFIG.serverPort);
+    console.log('Server listening on http://localhost:' + parent.CONFIG.serverPort);
 
     // Watch for changes
     parent.gulp.start('Watch');
