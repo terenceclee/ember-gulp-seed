@@ -1,0 +1,33 @@
+{
+  "name": "AngularSeedProject",
+  "version": "0.0.1",
+  "dependencies": {},
+  "devDependencies": {
+    "connect-livereload": "~0.3.2",
+    "open": "0.0.4",
+    "send": "~0.2.0",
+    "tiny-lr": "0.0.5",
+    "connect": "latest",
+    "run-sequence": "latest",
+    "karma": "latest",
+    "jshint-stylish": "latest",
+    "gulp": "latest",
+    "gulp-concat": "~2.1.7",
+    "gulp-clean": "~0.2.4",
+    "gulp-preprocess": "~1.0.1",
+    "gulp-minify-html": "~0.1.1",
+    "gulp-uglify": "~0.2.1",
+    "gulp-html2js": "latest",
+    "gulp-sass": "~0.7.1",
+    "gulp-uncss": "~0.4.0",
+    "gulp-minify-css": "~0.3.0",
+    "gulp-devtools": "0.0.2",
+    "gulp-if": "latest",
+    "gulp-jshint": "latest",
+    "gulp-newer": "latest",
+    "serve-static": "~1.5.1"
+  },
+  "engines": {
+    "node": ">=0.8.0"
+  }
+}

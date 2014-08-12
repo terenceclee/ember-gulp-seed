@@ -1,0 +1,16 @@
+{
+  "name": "AngularGulpSeed",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "1.2.21",
+    "modernizr": "2.8.3"
+  },
+  "devDependencies": {
+    "angular-sanitize": "1.2.21",
+    "angular-resource": "1.2.21",
+    "angular-route": "1.2.21",
+    "angular-touch": "~1.2.21",
+    "angulartics": "~0.15.18",
+    "json2": "*"
+  }
+}
