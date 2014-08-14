@@ -14,7 +14,7 @@ var parent = require.main.app;
 function Vendor() {
 
 	return parent.gulp.src(parent.CONFIG.vendor)
-		.pipe(parent.gulp.dest(parent.CONFIG.distRoot));
+		.pipe(parent.gulp.dest(parent.CONFIG.tmpRoot));
 		
 }
 

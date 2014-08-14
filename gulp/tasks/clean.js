@@ -13,7 +13,7 @@ var parent = require.main.app;
  */
 function Clean() {
 
-	return parent.gulp.src(parent.build ? parent.CONFIG.distRoot : parent.CONFIG.tmpRoot)
+	return parent.gulp.src(parent.dist ? parent.CONFIG.distRoot : parent.CONFIG.tmpRoot)
 		.pipe(parent.clean());
 		
 }

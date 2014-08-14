@@ -83,5 +83,5 @@ function ServeApp() {
 
 // Register task
 parent.gulp.task('serve', ['PrepareApp'], ServeApp);
-parent.gulp.task('default', ['PrepareApp'], ServeApp);
+parent.gulp.task('default', ['serve']);
 

@@ -15,7 +15,7 @@ function SASS() {
 
 	return parent.gulp.src(parent.CONFIG.sass)
 		.pipe(parent.sass())
-		.pipe(parent.gulp.dest((parent.build ? parent.CONFIG.distRoot : parent.CONFIG.tmpRoot) + '/assets'));
+		.pipe(parent.gulp.dest((parent.dist ? parent.CONFIG.distRoot : parent.CONFIG.tmpRoot) + '/assets'));
 		
 }
 

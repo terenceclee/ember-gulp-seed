@@ -13,7 +13,7 @@ var parent = require.main.app;
  */
 function PrepareApp() {
 
-	var tasks = parent.build ? parent.CONFIG.tasks.build : parent.CONFIG.tasks.serve;
+	var tasks = parent.dist ? parent.CONFIG.tasks.dist : parent.CONFIG.tasks.serve;
 
 	return parent.sequence(tasks);
 }

@@ -13,10 +13,10 @@ var parent = require.main.app;
  */
 function HeadScripts() {
 
-	return parent.gulp.src(parent.CONFIG.HeadScripts)
+	return parent.gulp.src(parent.CONFIG.appHeadScripts)
 		.pipe(parent.concat('dependencies.min.js'))
 		.pipe(parent.uglify())
-		.pipe(parent.gulp.dest(parent.CONFIG.distRoot + '/assets'));
+		.pipe(parent.gulp.dest((parent.dist ? parent.CONFIG.distRoot : parent.CONFIG.tmpRoot) + '/assets'));
 }
 
 /**
@@ -24,10 +24,10 @@ function HeadScripts() {
  */
 function MainScripts() {
 
-	return parent.gulp.src(parent.build ? parent.CONFIG.AppScripts : parent.CONFIG.scripts)
-		.pipe(parent.concat('app' + (parent.build ? '.min' : '') + '.js'))
-		.pipe(parent.gulpIf(parent.build, parent.uglify()))
-		.pipe(parent.gulp.dest((parent.build ? parent.CONFIG.distRoot : parent.CONFIG.tmpRoot) + '/assets'));
+	return parent.gulp.src( parent.CONFIG.appScripts )
+		.pipe(parent.concat('app' + (parent.dist ? '.min' : '') + '.js'))
+		.pipe(parent.gulpIf(parent.dist , parent.uglify()))
+		.pipe(parent.gulp.dest((parent.dist ? parent.CONFIG.distRoot : parent.CONFIG.tmpRoot) + '/assets'));
 		
 }
 

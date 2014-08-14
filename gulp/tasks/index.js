@@ -16,7 +16,7 @@ function Index() {
 	return parent.gulp.src(parent.CONFIG.index)
 		.pipe(parent.preprocess({
 			context: {
-				ENVIRONMENT: parent.build ? 'PRODUCTION' : 'DEVELOPMENT',
+				ENVIRONMENT: parent.dist ? 'PRODUCTION' : 'DEVELOPMENT',
 				TS: Date.now()
 			}
 		}))

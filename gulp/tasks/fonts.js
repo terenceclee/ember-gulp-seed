@@ -14,7 +14,7 @@ var parent = require.main.app;
 function Fonts() {
 
 	return parent.gulp.src(parent.CONFIG.fonts)
-		.pipe(parent.gulp.dest((parent.build ? parent.CONFIG.distRoot : parent.CONFIG.tmpRoot) + '/assets/fonts'))
+		.pipe(parent.gulp.dest((parent.dist ? parent.CONFIG.distRoot : parent.CONFIG.tmpRoot) + '/assets/fonts'))
 		
 }
 
