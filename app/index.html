@@ -24,6 +24,30 @@
 
 
         <!-- @if ENVIRONMENT == 'DEVELOPMENT' -->
+    <link rel="stylesheet" media="screen" href="/bootstrap/dist/css/bootstrap.css"">
+    <link rel="stylesheet" media="screen" href="/assets/stylesheets/t3/t3.css">
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" type="text/css" rel="stylesheet">
+
+    <link href="/angular-carousel.min.css" type="text/css" rel="stylesheet">
+
+        <!-- LANCENG CSS -->
+        <link href="/lanceng/style.css" rel="stylesheet">
+        <link href="/lanceng/style-responsive.css" rel="stylesheet">
+
+        <!-- VENDOR -->
+        <link href="/lanceng/animate.css" rel="stylesheet">
+        <link href="/lanceng/third/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="/lanceng/third/weather-icon/css/weather-icons.min.css" rel="stylesheet">
+        <link href="/lanceng/third/morris/morris.css" rel="stylesheet">
+        <link href="/lanceng/third/nifty-modal/css/component.css" rel="stylesheet">
+        <link href="/lanceng/third/sortable/sortable-theme-bootstrap.css" rel="stylesheet">
+        <link href="/lanceng/third/icheck/skins/minimal/grey.css" rel="stylesheet">
+        <link href="/lanceng/third/select/bootstrap-select.min.css" rel="stylesheet">
+        <link href="/lanceng/third/summernote/summernote.css" rel="stylesheet">
+        <link href="/lanceng/third/magnific-popup/magnific-popup.css" rel="stylesheet">
+        <link href="/lanceng/third/datepicker/css/datepicker.css" rel="stylesheet">
         <!-- @endif -->
 
         <!-- @if ENVIRONMENT == 'PRODUCTION' -->
@@ -31,23 +55,206 @@
             <script src="/assets/dependencies.js?ts=<!-- @echo TS -->" type="text/javascript"></script>
         <!-- @endif -->
 
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="/bootstrap/img/favicon.ico">
+    <link rel="apple-touch-icon" href="/bootstrap/img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/bootstrap/img/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/bootstrap/img/apple-touch-icon-114x114.png">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
     </head>
-    <body>
+    <body class="tooltips">
 
         <header>
-
         </header>
+<div class="container">
+    <!--lancengheader()-->
+<div class="logo-brand header sidebar rows">
+			<div class="logo">
+				<h1><a href="#fakelink">THEEBO</a></h1>
+			</div>
+</div>
 
-        <div id="content">
+   <!-- BEGIN SIDEBAR -->
+                <div class="left side-menu">
 
-            <div ng-view></div>
 
+            <div class="body rows scroll-y">
+
+                                <!-- Scrolling sidebar -->
+                <div class="sidebar-inner slimscroller">
+
+                                        <!-- User Session -->
+                                        <div class="media">
+                                                <a class="pull-left" href="#fakelink">
+							<!--{AVATAR GOES HERE}-->
+                                                </a>
+                                                <div class="media-body">
+                                                        <h4 class="media-heading"><strong>{USER NAME}</strong></h4>
+                                                        <a href="#">Edit</a>
+                                                        <a class="md-trigger" @*data-modal="logout-modal-alt"*@>Logout</a>
+                                                </div><!-- End div .media-body -->
+                                        </div><!-- End div .media -->
+
+
+                                        <!-- Search form -->
+                                        <div id="search">
+                                                <form role="form">
+                                                        <input type="text" class="form-control search" placeholder="Search here...">
+                                                        <i class="fa fa-search"></i>
+                                                </form>
+                                        </div><!-- End div #search -->
+
+                                        <!-- Sidebar menu -->
+                                        <div id="sidebar-menu">
+                                                <ul>
+                                                        <li><a href="/evtaj"><i class="fa fa-home"></i>Home</a></li>
+                                                        <li><a ng-controller="CreateCtrl" ng-click="ask()"><i class="fa fa-file-text-o"></i>Create a Theebo</a></li>
+                                                        <li><a href="#fakelink"><i class="fa fa-tasks"></i>Categories</a></li>
+                                                </ul>
+                                                <div class="clear"></div>
+                                        </div><!-- End div #sidebar-menu -->
+                                </div><!-- End div .sidebar-inner .slimscroller -->
+            </div><!-- End div .body .rows .scroll-y -->
+
+                        <!-- Sidebar footer -->
+            <div class="footer rows animated fadeInUpBig">
+                                <div class="progress progress-xs progress-striped active">
+                                  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                        <span class="progress-precentage">80&#37;</span>
+                                  </div><!-- End div .pogress-bar -->
+                                  <a data-toggle="tooltip" title="See task progress" class="btn btn-default md-trigger" data-modal="task-progress"><i class="fa fa-inbox"></i></a>
+                                </div><!-- End div .progress .progress-xs -->
+            </div><!-- End div .footer .rows -->
         </div>
+                <!-- END SIDEBAR -->
+
+
+
+
+    <!--//lancengheader()-->
+    <div class="right content-page" id="content">
+      <!--contentheader()-->
+
+                <!-- BEGIN CONTENT HEADER -->
+            <div class="header content rows-content-header">
+
+                                <!-- Button mobile view to collapse sidebar menu -->
+                                <button class="button-menu-mobile show-sidebar">
+                                        <i class="fa fa-bars"></i>
+                                </button>
+
+                                <!-- BEGIN NAVBAR CONTENT-->
+                                <div class="navbar navbar-default" role="navigation">
+                                        <div class="container">
+                                                <!-- Navbar header -->
+                                                <div class="navbar-header">
+                                                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                                                <i class="fa fa-angle-double-down"></i>
+                                                        </button>
+                                                </div><!-- End div .navbar-header -->
+
+                                                <!-- Navbar collapse -->
+                                                <div class="navbar-collapse collapse">
+
+  <!-- Right navbar -->
+                                                        <ul class="nav navbar-nav navbar-right top-navbar">
+
+                                                                <!-- Dropdown notifications -->
+                                                                <li class="dropdown">
+                                                                        <a href="#fakelink" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i><span class="label label-danger absolute">24</span></a>
+                                                                        <ul class="dropdown-menu dropdown-message animated half slideInDown">
+                                                                                <!-- Dropdown notification header -->
+                                                                                <li class="dropdown-header notif-header">New Notifications</li>
+                                                                                <li class="divider"></li>
+
+                                                                                <!-- Dropdown notification body -->
+                                                                                <li class="unread">
+                                                                                        <a href="#fakelink">
+                                                                                        <p><strong>John Doe</strong> Uploaded a photo <strong>&#34;DSC000254.jpg&#34;</strong>
+                                                                                        <br /><i>2 minutes ago</i></p>
+                                                                                        </a>
+                                                                                </li>
+                                                                                <li class="unread">
+                                                                                        <a href="#fakelink">
+                                                                                        <p><strong>John Doe</strong> Created an photo album  <strong>&#34;Indonesia Tourism&#34;</strong>
+                                                                                        <br /><i>8 minutes ago</i></p>
+                                                                                        </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                        <a href="#fakelink">
+                                                                                        <p><strong>Annisa</strong> Posted an article  <strong>&#34;Yogyakarta never ending Asia&#34;</strong>
+                                                                                        <br /><i>an hour ago</i></p>
+                                                                                        </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                        <a href="#fakelink">
+                                                                                        <p><strong>Ari Rusmanto</strong> Added 3 products
+                                                                                        <br /><i>3 hours ago</i></p>
+                                                                                        </a>
+                                                                                </li>
+                                                                                <li>
+                                                                                        <a href="#fakelink">
+                                                                                        <p><strong>Hana Sartika</strong> Send you a message  <strong>&#34;Lorem ipsum dolor...&#34;</strong>
+                                                                                        <br /><i>12 hours ago</i></p>
+                                                                                        </a>
+                                                                                </li>
+   <li>
+                                                                                        <a href="#fakelink">
+                                                                                        <p><strong>Johnny Depp</strong> Updated his avatar
+                                                                                        <br /><i>Yesterday</i></p>
+                                                                                        </a>
+                                                                                </li>
+
+                                                                                <!-- Dropdown notification footer -->
+                                                                                <li class="dropdown-footer"><a href="#fakelink"><i class="fa fa-refresh"></i> Refresh</a></li>
+                                                                        </ul>
+                                                                </li>
+                                                                <!-- End Dropdown notifications -->
+
+
+      <!-- Dropdown User session -->
+                                                                <li class="dropdown">
+                                                                        <a href="#fakelink" class="dropdown-toggle" data-toggle="dropdown">Hello, <strong>{USER NAME}</strong> <i class="fa fa-chevron-down i-xs"></i></a>
+                                                                        <ul class="dropdown-menu animated half flipInX">
+                                                                                <li><a href="#fakelink">My Profile</a></li>
+                                                                                <li><a href="#fakelink">Change Password</a></li>
+                                                                                <li><a href="#fakelink">Account Setting</a></li>
+                                                                                <li class="divider"></li>
+                                                                                <li class="dropdown-header">Another action</li>
+                                                                                <li><a href="#fakelink">Help</a></li>
+                                                                                <li><a class="md-trigger" @*data-modal="logout-modal"*@>Logout</a></li>
+                                                                        </ul>
+                                                                </li>
+                                                                <!-- End Dropdown User session -->
+                                                        </ul>
+                                                </div><!-- End div .navbar-collapse -->
+                                        </div><!-- End div .container -->
+                                </div>
+                                <!-- END NAVBAR CONTENT-->
+            </div>
+                        <!-- END CONTENT HEADER -->
+
+
+      <!--//contentheader()-->
+      <div class="body content rows scroll-y">
+         @content
+            <div ng-view></div>
+      </div>
+    </div>
+</div>
 
         <footer>
-
         </footer>
-
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -58,6 +265,71 @@
         </script>
 
         <!-- @if ENVIRONMENT == 'DEVELOPMENT' -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="//code.jquery.com/jquery.js"></script>
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/holder/2.3.1/holder.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+    <script src="//code.angularjs.org/1.2.16/angular-touch.min.js"></script>
+
+    @* todo: make a build script to minify *@
+    <script src="/assets/angular-carousel.min.js"></script>
+    <script src="/assets/ui-bootstrap-0.11.0.js"></script>
+    <script src="/assets/ui-bootstrap-tpls-0.11.0.js"></script>
+    <script src="/assets/app/list/list.js"></script>
+    <script src="/assets/app/user/user.js"></script>
+    <script src="/assets/app/app.js"></script>
+    <script src="/assets/app/common/services/fileUploader.js"></script>
+    <script src="/assets/app/common/directives/ngFileSelect.js"></script>
+
+
+
+
+
+    <!-- VENDOR -->
+
+        <!-- Slimscroll js -->
+        <script src="/lanceng/third/slimscroll/jquery.slimscroll.min.js"></script>
+
+        <!-- Morris js -->
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+        <script src="/lanceng/third/morris/morris.js"></script>
+
+        <!-- Nifty modals js -->
+        <script src="/lanceng/third/nifty-modal/js/classie.js"></script>
+        <script src="/lanceng/third/nifty-modal/js/modalEffects.js"></script>
+
+        <!-- Sortable js -->
+        <script src="/lanceng/third/sortable/sortable.min.js"></script>
+
+        <!-- Bootstrao selectpicker js -->
+        <script src="/lanceng/third/select/bootstrap-select.min.js"></script>
+
+        <!-- Summernote js -->
+        <script src="/lanceng/third/summernote/summernote.js"></script>
+
+        <!-- Magnific popup js -->
+        <script src="/lanceng/third/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+        <!-- Bootstrap file input js -->
+        <script src="/lanceng/third/input/bootstrap.file-input.js"></script>
+
+        <!-- Bootstrao datepicker js -->
+        <script src="/lanceng/third/datepicker/js/bootstrap-datepicker.js"></script>
+
+        <!-- Icheck js -->
+        <script src="/lanceng/third/icheck/icheck.min.js"></script>
+
+        <!-- Form wizard js -->
+        <script src="/lanceng/third/wizard/jquery.snippet.js"></script>
+        <script src="/lanceng/third/wizard/jquery.easyWizard.js"></script>
+        <script src="/lanceng/third/wizard/scripts.js"></script>
+        <!-- lance ng -->
+        <script src="/lanceng/lanceng.js"></script>
+
         <!-- @endif -->
 
         <!-- @if ENVIRONMENT == 'PRODUCTION' -->

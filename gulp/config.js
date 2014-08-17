@@ -17,13 +17,14 @@ module.exports = {
 	templates: './app/**/*.tpl.html',
 	index: './app/index.html',
 	vendor: './vendor/**',
+	lanceng: './lanceng/**',
 	scripts: ['./app/**/*.js'],
 	appHeadScripts: [
 		'./vendor/**/*.js', 
 	],
 	appScripts: [
         	'./vendor/angular*/*.js', 
-	        './app/**/*.js',
+	        './app/**',
        		'./dist/assets/templates.js'
 	]
 };
