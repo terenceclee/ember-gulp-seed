@@ -12,10 +12,9 @@ var parent = require.main.app;
  * Runs task to prepare head scripts
  */
 function HeadScripts() {
-
 	return parent.gulp.src(parent.CONFIG.appHeadScripts)
 		.pipe(parent.concat('dependencies.min.js'))
-		.pipe(parent.uglify())
+		.pipe(parent.gulpIf(parent.dist, parent.uglify())
 		.pipe(parent.gulp.dest((parent.dist ? parent.CONFIG.distRoot : parent.CONFIG.tmpRoot) + '/assets'));
 }
 

@@ -9,14 +9,10 @@
 var parent = require.main.app;
 
 /**
- * Builds the app
+ * Dist the app
  */
-function BuildApp() {
-
+function DistApp(){
 	parent.dist = true;
-
-	return parent.gulp.start('PrepareApp');
-
 }
 
-parent.gulp.task('dist', BuildApp);
+parent.gulp.task('dist', ['build','HeadScripts'], DistApp);

@@ -28,14 +28,12 @@ module.static     = require('serve-static');
 // Load configuration
 module.CONFIG = require('./gulp/config');
 
-// Set the dist flag to false
-module.dist = false;
-
 // Load module into require so it is accessible anywhere
 require.main.app = module;
 
 // Load tasks
 require('./gulp/test');
+require('./gulp/build');
 require('./gulp/serve');
 require('./gulp/dist');
 

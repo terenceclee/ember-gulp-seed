@@ -3,17 +3,21 @@
  */
 
 module.exports = {
-	appRoot: './app',
+	//server and folder config
+	serverPort: 9001,
+	reloadPort: 35729,
 	distRoot: './dist',
 	tmpRoot: './tmp',
-	templates: './app/**/*.tpl.html',
-	index: './app/index.html',
-	images: './app/images/**/*.{jpg,jpeg,png,gif,ico}',
-	scripts: ['./app/**/*.js'],
+	//app config
+	appRoot: './app',
 	styles: './app/**/*.scss',
 	sass: './app/sass/main.sass',
+	images: './app/images/**/*.{jpg,jpeg,png,gif,ico}',
 	fonts: './app/fonts/**/*.*',
+	templates: './app/**/*.tpl.html',
+	index: './app/index.html',
 	vendor: './vendor/**',
+	scripts: ['./app/**/*.js'],
 	appHeadScripts: [
 		'./vendor/**/*.js', 
 	],
@@ -21,11 +25,5 @@ module.exports = {
         	'./vendor/angular*/*.js', 
 	        './app/**/*.js',
        		'./dist/assets/templates.js'
-	],
-	serverPort: 9001,
-	reloadPort: 35729,
-	tasks: {
-		dist:  ['Clean', 'JSHint', 'Templates', 'SASS', 'MainScripts', 'HeadScripts', 'Fonts', 'Index'],
-		serve: ['Clean', 'JSHint', 'Templates', 'SASS', 'MainScripts', 'HeadScripts', 'Fonts', 'Index', 'Vendor']
-	}
+	]
 };

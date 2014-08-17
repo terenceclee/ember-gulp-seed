@@ -12,11 +12,6 @@ var parent = require.main.app;
  * Builds the app
  */
 function BuildApp() {
-
-	parent.build = true;
-
-	return parent.gulp.start('PrepareApp');
-
 }
 
-parent.gulp.task('build', BuildApp);
+parent.gulp.task('build', ['Clean', 'JSHint', 'Templates', 'SASS', 'MainScripts', 'Fonts', 'Index', 'Vendor']);

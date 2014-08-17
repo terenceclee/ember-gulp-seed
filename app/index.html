@@ -22,14 +22,12 @@
         <meta property="og:description" content="{{pageDescription || 'My Description'}}" />
         <meta name="twitter:card" content="summary">
 
-        <link rel="stylesheet" href="/assets/global.css?ts=<!-- @echo TS -->" type="text/css" />
 
         <!-- @if ENVIRONMENT == 'DEVELOPMENT' -->
-            <script src="/json2/json2.js" type="text/javascript"></script>
-            <script src="/modernizr/modernizr.js" type="text/javascript"></script>
         <!-- @endif -->
 
         <!-- @if ENVIRONMENT == 'PRODUCTION' -->
+            <link rel="stylesheet" href="/assets/global.css?ts=<!-- @echo TS -->" type="text/css" />
             <script src="/assets/dependencies.js?ts=<!-- @echo TS -->" type="text/javascript"></script>
         <!-- @endif -->
 
@@ -60,15 +58,6 @@
         </script>
 
         <!-- @if ENVIRONMENT == 'DEVELOPMENT' -->
-            <script src="/angular/angular.js" type="text/javascript"></script>
-            <script src="/angular-resource/angular-resource.js" type="text/javascript"></script>
-            <script src="/angular-route/angular-route.js" type="text/javascript"></script>
-            <script src="/angular-sanitize/angular-sanitize.js" type="text/javascript"></script>
-            <script src="/angular-touch/angular-touch.js" type="text/javascript"></script>
-            <script src="/angulartics/src/angulartics.js" type="text/javascript"></script>
-            <script src="/angulartics/src/angulartics-ga.js" type="text/javascript"></script>
-            <script src="/assets/app.js" type="text/javascript"></script>
-            <script src="/assets/templates.js" type="text/javascript"></script>
         <!-- @endif -->
 
         <!-- @if ENVIRONMENT == 'PRODUCTION' -->

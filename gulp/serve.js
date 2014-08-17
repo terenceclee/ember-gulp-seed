@@ -9,7 +9,6 @@
 var parent = require.main.app;
 
 // Load tasks
-require('./tasks/prepare');
 require('./tasks/jshint');
 require('./tasks/clean');
 require('./tasks/vendor');
@@ -82,6 +81,6 @@ function ServeApp() {
 }
 
 // Register task
-parent.gulp.task('serve', ['PrepareApp'], ServeApp);
+parent.gulp.task('serve', ['build'], ServeApp);
 parent.gulp.task('default', ['serve']);
 

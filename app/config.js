@@ -13,7 +13,7 @@
 	function AppConfiguration ($location) {
 
 		this.ENVIRONMENT = $location.host() === 'mydomain.com' ? 'PRODUCTION' : 'DEVELOPMENT';
-		this.API         = this.ENVIRONMENT === 'PRODUCTION' ? 'http://api.mydomain.com' : 'http://local.mydomain.com:3000';
+		this.API         = this.ENVIRONMENT === 'PRODUCTION' ? 'http://api.mydomain.com' : 'http://localhost:3000';
 
 	}
 
