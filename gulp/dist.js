@@ -13,6 +13,7 @@ var parent = require.main.app;
  */
 function DistApp(){
 	parent.dist = true;
+	return parent.sequence(['build', 'HeadScripts']);
 }
 
-parent.gulp.task('dist', ['build','HeadScripts'], DistApp);
+parent.gulp.task('dist', DistApp);

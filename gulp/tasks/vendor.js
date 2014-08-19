@@ -18,11 +18,5 @@ function Vendor() {
 		
 }
 
-function Lanceng(){
-	return parent.gulp.src(parent.CONFIG.lanceng, { "base" : "." })
-		.pipe(parent.gulp.dest(parent.CONFIG.tmpRoot) );
-}
-
 // Register Task
 parent.gulp.task('Vendor', Vendor);
-parent.gulp.task('Lanceng', Lanceng);

@@ -1,8 +1,8 @@
 <!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" ng-controller="AppController" ng-app="app" id="ng-app"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" ng-controller="AppController" ng-app="app" id="ng-app"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" ng-controller="AppController" ng-app="app"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" ng-controller="AppController" ng-app="app"> <!--<![endif]-->
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" ng-app="app" id="ng-app"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" ng-app="app" id="ng-app"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" ng-app="app"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" ng-app="app"> <!--<![endif]-->
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -25,29 +25,29 @@
 
         <!-- @if ENVIRONMENT == 'DEVELOPMENT' -->
     <link rel="stylesheet" media="screen" href="/bootstrap/dist/css/bootstrap.css"">
-    <link rel="stylesheet" media="screen" href="/assets/stylesheets/t3/t3.css">
+    <link rel="stylesheet" media="screen" href="/assets/styles/t3.css">
 
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap-theme.min.css">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" type="text/css" rel="stylesheet">
 
-    <link href="/angular-carousel.min.css" type="text/css" rel="stylesheet">
+    <link href="/app/third/angular-carousel.min.css" type="text/css" rel="stylesheet">
 
         <!-- LANCENG CSS -->
-        <link href="/lanceng/style.css" rel="stylesheet">
-        <link href="/lanceng/style-responsive.css" rel="stylesheet">
+        <link href="/app/third/lanceng/style.css" rel="stylesheet">
+        <link href="/app/third/lanceng/style-responsive.css" rel="stylesheet">
 
         <!-- VENDOR -->
-        <link href="/lanceng/animate.css" rel="stylesheet">
-        <link href="/lanceng/third/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-        <link href="/lanceng/third/weather-icon/css/weather-icons.min.css" rel="stylesheet">
-        <link href="/lanceng/third/morris/morris.css" rel="stylesheet">
-        <link href="/lanceng/third/nifty-modal/css/component.css" rel="stylesheet">
-        <link href="/lanceng/third/sortable/sortable-theme-bootstrap.css" rel="stylesheet">
-        <link href="/lanceng/third/icheck/skins/minimal/grey.css" rel="stylesheet">
-        <link href="/lanceng/third/select/bootstrap-select.min.css" rel="stylesheet">
-        <link href="/lanceng/third/summernote/summernote.css" rel="stylesheet">
-        <link href="/lanceng/third/magnific-popup/magnific-popup.css" rel="stylesheet">
-        <link href="/lanceng/third/datepicker/css/datepicker.css" rel="stylesheet">
+        <link href="/app/third/lanceng/animate.css" rel="stylesheet">
+        <link href="/app/third/lanceng/third/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="/app/third/lanceng/third/weather-icon/css/weather-icons.min.css" rel="stylesheet">
+        <link href="/app/third/lanceng/third/morris/morris.css" rel="stylesheet">
+        <link href="/app/third/lanceng/third/nifty-modal/css/component.css" rel="stylesheet">
+        <link href="/app/third/lanceng/third/sortable/sortable-theme-bootstrap.css" rel="stylesheet">
+        <link href="/app/third/lanceng/third/icheck/skins/minimal/grey.css" rel="stylesheet">
+        <link href="/app/third/lanceng/third/select/bootstrap-select.min.css" rel="stylesheet">
+        <link href="/app/third/lanceng/third/summernote/summernote.css" rel="stylesheet">
+        <link href="/app/third/lanceng/third/magnific-popup/magnific-popup.css" rel="stylesheet">
+        <link href="/app/third/lanceng/third/datepicker/css/datepicker.css" rel="stylesheet">
         <!-- @endif -->
 
         <!-- @if ENVIRONMENT == 'PRODUCTION' -->
@@ -126,15 +126,6 @@
                                 </div><!-- End div .sidebar-inner .slimscroller -->
             </div><!-- End div .body .rows .scroll-y -->
 
-                        <!-- Sidebar footer -->
-            <div class="footer rows animated fadeInUpBig">
-                                <div class="progress progress-xs progress-striped active">
-                                  <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                                        <span class="progress-precentage">80&#37;</span>
-                                  </div><!-- End div .pogress-bar -->
-                                  <a data-toggle="tooltip" title="See task progress" class="btn btn-default md-trigger" data-modal="task-progress"><i class="fa fa-inbox"></i></a>
-                                </div><!-- End div .progress .progress-xs -->
-            </div><!-- End div .footer .rows -->
         </div>
                 <!-- END SIDEBAR -->
 
@@ -247,7 +238,7 @@
 
       <!--//contentheader()-->
       <div class="body content rows scroll-y">
-         @content
+         @wtfcontent
             <div ng-view></div>
       </div>
     </div>
@@ -276,14 +267,14 @@
     <script src="//code.angularjs.org/1.2.16/angular-touch.min.js"></script>
 
     @* todo: make a build script to minify *@
-    <script src="/assets/angular-carousel.min.js"></script>
-    <script src="/assets/ui-bootstrap-0.11.0.js"></script>
-    <script src="/assets/ui-bootstrap-tpls-0.11.0.js"></script>
-    <script src="/assets/app/list/list.js"></script>
-    <script src="/assets/app/user/user.js"></script>
-    <script src="/assets/app/app.js"></script>
-    <script src="/assets/app/common/services/fileUploader.js"></script>
-    <script src="/assets/app/common/directives/ngFileSelect.js"></script>
+    <script src="/app/third/angular-carousel.min.js"></script>
+    <script src="/app/third/ui-bootstrap-0.11.0.js"></script>
+    <script src="/app/third/ui-bootstrap-tpls-0.11.0.js"></script>
+    <script src="/app/list/list.js"></script>
+    <script src="/app/user/user.js"></script>
+    <script src="/app/app.js"></script>
+    <script src="/app/common/services/fileUploader.js"></script>
+    <script src="/app/common/directives/ngFileSelect.js"></script>
 
 
 
@@ -292,48 +283,49 @@
     <!-- VENDOR -->
 
         <!-- Slimscroll js -->
-        <script src="/lanceng/third/slimscroll/jquery.slimscroll.min.js"></script>
+        <script src="/app/third/lanceng/third/slimscroll/jquery.slimscroll.min.js"></script>
 
         <!-- Morris js -->
         <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-        <script src="/lanceng/third/morris/morris.js"></script>
+        <script src="/app/third/lanceng/third/morris/morris.js"></script>
 
         <!-- Nifty modals js -->
-        <script src="/lanceng/third/nifty-modal/js/classie.js"></script>
-        <script src="/lanceng/third/nifty-modal/js/modalEffects.js"></script>
+        <script src="/app/third/lanceng/third/nifty-modal/js/classie.js"></script>
+        <script src="/app/third/lanceng/third/nifty-modal/js/modalEffects.js"></script>
 
         <!-- Sortable js -->
-        <script src="/lanceng/third/sortable/sortable.min.js"></script>
+        <script src="/app/third/lanceng/third/sortable/sortable.min.js"></script>
 
         <!-- Bootstrao selectpicker js -->
-        <script src="/lanceng/third/select/bootstrap-select.min.js"></script>
+        <script src="/app/third/lanceng/third/select/bootstrap-select.min.js"></script>
 
         <!-- Summernote js -->
-        <script src="/lanceng/third/summernote/summernote.js"></script>
+        <script src="/app/third/lanceng/third/summernote/summernote.js"></script>
 
         <!-- Magnific popup js -->
-        <script src="/lanceng/third/magnific-popup/jquery.magnific-popup.min.js"></script>
+        <script src="/app/third/lanceng/third/magnific-popup/jquery.magnific-popup.min.js"></script>
 
         <!-- Bootstrap file input js -->
-        <script src="/lanceng/third/input/bootstrap.file-input.js"></script>
+        <script src="/app/third/lanceng/third/input/bootstrap.file-input.js"></script>
 
         <!-- Bootstrao datepicker js -->
-        <script src="/lanceng/third/datepicker/js/bootstrap-datepicker.js"></script>
+        <script src="/app/third/lanceng/third/datepicker/js/bootstrap-datepicker.js"></script>
 
         <!-- Icheck js -->
-        <script src="/lanceng/third/icheck/icheck.min.js"></script>
+        <script src="/app/third/lanceng/third/icheck/icheck.min.js"></script>
 
         <!-- Form wizard js -->
-        <script src="/lanceng/third/wizard/jquery.snippet.js"></script>
-        <script src="/lanceng/third/wizard/jquery.easyWizard.js"></script>
-        <script src="/lanceng/third/wizard/scripts.js"></script>
+        <script src="/app/third/lanceng/third/wizard/jquery.snippet.js"></script>
+        <script src="/app/third/lanceng/third/wizard/jquery.easyWizard.js"></script>
+        <script src="/app/third/lanceng/third/wizard/scripts.js"></script>
         <!-- lance ng -->
-        <script src="/lanceng/lanceng.js"></script>
+        <script src="/app/third/lanceng/lanceng.js"></script>
 
         <!-- @endif -->
 
         <!-- @if ENVIRONMENT == 'PRODUCTION' -->
             <script src="/assets/app.min.js?ts=<!-- @echo TS -->" type="text/javascript"></script>
         <!-- @endif -->
+test
     </body>
 </html>

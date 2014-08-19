@@ -5,6 +5,7 @@
 // Load modules
 module.gulp       = require('gulp');
 module.sass       = require('gulp-sass');
+module.less       = require('gulp-less');
 module.concat     = require('gulp-concat');
 module.uglify     = require('gulp-uglify');
 module.clean      = require('gulp-clean');
@@ -30,6 +31,8 @@ module.CONFIG = require('./gulp/config');
 
 // Load module into require so it is accessible anywhere
 require.main.app = module;
+
+module.dist = false;
 
 // Load tasks
 require('./gulp/test');

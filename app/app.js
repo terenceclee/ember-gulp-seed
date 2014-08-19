@@ -6,28 +6,12 @@
 
 	'use strict';
 
-	/**
-	 * App Controller
-	 * @param  {object} $rootScope The app's root scope
-	 * @param  {object} $scope     The controller scope
-	 */
-	function AppController ($rootScope, $scope) {
-
-
-
-	}
-
-	// Inject dependencies
-	AppController.$inject = ['$rootScope', '$scope'];
-
 	// Register app
 	angular.module('app', [
-		'angulartics.google.analytics',
-		'app.module1',
-		'app.module2',
-		'app.module3'
+		//'angulartics.google.analytics',
+		'list',
+		'user'
 	])
-	.controller('AppController', AppController)
 	.config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
 
 		// Set up html5 mode
@@ -39,6 +23,12 @@
 			redirectTo: '/'
 		});
 
-	}]);
+	}])
+        .constant('settings',  {
+	        baseHost: 'http://localhost:9000',
+		basePath: '/evtaj',
+		imageServiceHost:'http://localhost:8080',
+		imageServicePath:'/taj'
+        });
 
 })();

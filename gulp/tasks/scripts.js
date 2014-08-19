@@ -26,7 +26,7 @@ function MainScripts() {
 	return parent.gulp.src( parent.CONFIG.appScripts )
 		//.pipe(parent.concat('app' + (parent.dist ? '.min' : '') + '.js'))
 		.pipe(parent.gulpIf(parent.dist , parent.uglify()))
-		.pipe(parent.gulp.dest((parent.dist ? parent.CONFIG.distRoot : parent.CONFIG.tmpRoot) + '/assets'));
+		.pipe(parent.gulp.dest((parent.dist ? parent.CONFIG.distRoot : parent.CONFIG.tmpRoot) + '/app'));
 		
 }
 
