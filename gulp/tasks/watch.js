@@ -27,14 +27,14 @@ function Watch() {
   // Watch Styles
   parent.gulp.watch(parent.CONFIG.styles, function() {
 
-    return parent.sequence('SASS', 'Reload');
+    return parent.sequence('SASS', 'LESS', 'Reload');
 
   });
 
   // Watch Scripts
   parent.gulp.watch(parent.CONFIG.scripts, function() {
 
-    return parent.sequence('JSHint', 'Scripts', 'Reload');
+    return parent.sequence('JSHint', 'MainScripts', 'Reload');
 
   });
 

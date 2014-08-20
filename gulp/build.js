@@ -11,9 +11,10 @@ var parent = require.main.app;
 /**
  * Builds the app
  */
-function BuildApp() {
-    return parent.gulp.start('buildHelper');
+function BuildApp(callback) {
+    return parent.sequence('Clean', ['JSHint', 'Templates', 'SASS', 'LESS', 'MainScripts', 'Fonts', 'Index', 'Vendor'], callback);
 }
 
-parent.gulp.task('build', ['Clean'], BuildApp);
-parent.gulp.task('buildHelper', ['JSHint', 'Templates', 'SASS', 'LESS', 'MainScripts', 'Fonts', 'Index', 'Vendor'] );
+parent.buildApp = BuildApp;
+
+parent.gulp.task('build', BuildApp);

@@ -1,0 +1,31 @@
+<article class="expanded">
+	<h1 class="question">{{slide.answer.question.questionText}}</h1>
+        <ul rn-carousel rn-carousel-control rn-carousel-index="slideIndex" class="text-center" ng-switch="{{slide.answer}}">
+
+                <li class="answer" ng-repeat="slide in slides" ng-style="{'background-image': 'url({{slide.answer.firstAnswerImageLink}})'}" ng-when-default>
+
+                   <div class="debug" style="font-family:courier; font-size:8px; text-align:left; float:right; padding-right:1em;">
+                    DEBUG:<br>
+                    {{ slide.label }} / {{ slides.length }}<br>
+                    carouselIndex: {{ carouselIndex }}<br>
+                    carouselBufferIndex: {{ carouselBufferIndex }}<br>
+                   </div>
+
+                   <div class="user">(placeholder) user name and profile picture</div>
+                   <ol>
+                     <li data-answerId="{{slide.answer.firstAnswerId}}">{{slide.answer.firstAnswerText}}</li>
+                     <li data-answerId="{{slide.answer.secondAnswerId}}">{{slide.answer.secondAnswerText}}</li>
+                     <li data-answerId="{{slide.answer.thirdAnswerId}}">{{slide.answer.thirdAnswerText}}</li>
+                   </ol>
+                </li>
+
+		<div ng-switch-when="0">
+			<span ng-click="provideAnswer(questionId)">No answers - provide an answer</span>
+		</div>
+
+	<ul class="list-options">
+		<li ng-click="provideAnswer(questionId)">Create List</li>
+		<li>Aggregated List</li>
+	</ul>
+</article>
+

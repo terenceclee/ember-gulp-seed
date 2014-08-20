@@ -1,0 +1,36 @@
+<form name="aForm" ng-submit="ok()">
+
+	<div class="modal-header">
+		<h3 class="modal-title">Create List</h3>
+		<p class="debug">debug - questionId is {{questionId}}</p>
+	</div>
+
+	<div class="modal-body">
+		<div class="input-group">
+			<span class="input-group-addon">#1</span>
+			<input type="text" name="firstAnswer" ng-model="answerForm.firstAnswer" required class="form-control"/>
+		        <input type="hidden" ng-model="answerForm.firstAnswerId" value=""/>
+			<input ng-file-select="{id: 'firstAnswerImage'}" type="file">
+		</div>
+
+		<div class="input-group">
+			<span class="input-group-addon">#2</span>
+			<input type="text" name="secondAnswer" ng-model="answerForm.secondAnswer" required class="form-control"/>
+		        <input type="hidden" ng-model="answerForm.secondAnswerId" value=""/>
+			<input ng-file-select="{id: 'secondAnswerImage'}" type="file">
+		</div>
+
+		<div class="input-group">
+			<span class="input-group-addon">#3</span>
+			<input type="text" name="thirdAnswer" ng-model="answerForm.thirdAnswer" required class="form-control"/>
+		        <input type="hidden" ng-model="answerForm.thirdAnswerId" value=""/>
+			<input ng-file-select="{id: 'thirdAnswerImage'}" type="file">
+		</div>
+
+	</div>
+
+	<div class="modal-footer">
+		<button ng-disabled="!aForm.$valid" class="btn btn-primary">Submit</button>
+	</div>
+
+</form>

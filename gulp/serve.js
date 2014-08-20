@@ -19,6 +19,7 @@ require('./tasks/scripts');
 require('./tasks/index');
 require('./tasks/reload');
 require('./tasks/watch');
+require('./build');
 
 function ServeApp() {
 
@@ -80,7 +81,11 @@ function ServeApp() {
 
 }
 
+function ServeAppHelper(){
+	parent.buildApp(ServeApp);
+}
+
 // Register task
-parent.gulp.task('serve', ['build'], ServeApp);
+parent.gulp.task('serve', ServeAppHelper);
 parent.gulp.task('default', ['serve']);
 
