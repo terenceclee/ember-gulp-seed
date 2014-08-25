@@ -9,17 +9,8 @@
 var parent = require.main.app;
 
 // Load tasks
-require('./tasks/jshint');
-require('./tasks/clean');
-require('./tasks/vendor');
-require('./tasks/fonts');
-require('./tasks/templates');
-require('./tasks/sass');
-require('./tasks/scripts');
-require('./tasks/index');
-require('./tasks/reload');
+require('./tasks/app');
 require('./tasks/watch');
-require('./build');
 
 function ServeApp() {
 
@@ -81,11 +72,26 @@ function ServeApp() {
 
 }
 
-function ServeAppHelper(){
-	parent.buildApp(ServeApp);
+
+function Reload() {
+
+  setTimeout(function() {
+
+    parent.reloadServer.changed({
+      body: {
+        files: parent.eventPath
+      }
+    });
+
+  }, 500);
+
 }
 
 // Register task
-parent.gulp.task('serve', ServeAppHelper);
+parent.gulp.task('Reload', Reload);
+
+
+// Register task
+parent.gulp.task('serve', function(){ parent.buildApp(ServeApp) });
 parent.gulp.task('default', ['serve']);
 

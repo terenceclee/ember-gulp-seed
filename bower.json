@@ -1,17 +1,13 @@
 {
-  "name": "Theebo",
+  "name": "Seed",
   "version": "0.0.1",
   "dependencies": {
-    "angular": "1.2.21",
     "modernizr": "2.8.3",
-    "bootstrap": "3.1.0"
+    "ember": "*",
+    "handlebars": "*",
+    "jquery": "*"
   },
   "devDependencies": {
-    "angular-sanitize": "1.2.21",
-    "angular-resource": "1.2.21",
-    "angular-route": "1.2.21",
-    "angular-touch": "~1.2.21",
-    "angulartics": "~0.15.18",
     "json2": "*"
   }
 }

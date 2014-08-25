@@ -9,21 +9,10 @@ module.exports = {
 	distRoot: './dist',
 	tmpRoot: './tmp',
 	//app config
-	appRoot: './app',
-	styles: './app/**/*.scss',
-	sass: './app/sass/main.sass',
-	less: './app/**/*.less',
-	images: './app/images/**/*.{jpg,jpeg,png,gif,ico}',
-	fonts: './app/fonts/**/*.*',
-	templates: './app/**/*.tpl.html',
-	index: './app/index.html',
+	appRoot: './src/app',
+	sass: './src/app/*.sass',
+	less: './src/app/*.less',
+	index: './src/app/index.html',
 	vendor: './vendor/**',
-	lanceng: './app/third/lanceng/**',
-	scripts: ['./app/**/*.js'],
-	appHeadScripts: [
-		'./vendor/**/*.js', 
-	],
-	appScripts: [
-	        './app/**',
-	]
+	scripts: ['./src/app/**/*.js']
 };
