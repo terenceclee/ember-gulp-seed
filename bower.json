@@ -3,9 +3,13 @@
   "version": "0.0.1",
   "dependencies": {
     "modernizr": "2.8.3",
-    "ember": "*",
+    "ember": "~1.7",
+    "bootstrap": "*",
     "handlebars": "*",
-    "jquery": "*"
+    "jquery": "*",
+    "cal-heatmap": "*",
+    "ember-calendar":"*",
+    "ember-model":"git://github.com/ebryn/ember-model.git#14d678ac89ae5636bef8c844d6a93681d7c75d18"
   },
   "devDependencies": {
     "json2": "*"

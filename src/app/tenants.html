@@ -1,0 +1,37 @@
+<script type="text/x-handlebars" data-template-name="tenants">
+<div class="box-info">
+    <h2>Tenants</h2>
+	<div class="table-responsive">
+		<table data-sortable="" class="table" data-sortable-initialized="true">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th data-sortable="false">Action</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				{{#each tenant in model}}
+	                <tr>
+	                  <td>
+	                    {{#link-to 'tenant' tenant.id}} {{tenant.first_name}} {{/link-to}}
+	                  </td>
+	                  <td>						
+	                  	<div class="btn-group btn-group-xs">
+							{{#if isEnabled.payments}}
+								<a data-toggle="tooltip" title="Payment" class="btn btn-default"><i class="fa fa-money"></i></a>
+							{{/if}}
+							
+							{{#link-to 'tenant.edit' tenant}}
+								<span data-toggle="tooltip" title="Edit" class="btn btn-default"><i class="fa fa-edit"></i></span>
+							{{/link-to}}
+						</div>
+					  </td>
+	                </tr>
+            	{{/each}}
+			</tbody>
+		</table>
+	</div>
+</div>
+ 
+</script>

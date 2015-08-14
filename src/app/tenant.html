@@ -1,0 +1,107 @@
+<script type="text/x-handlebars" data-template-name="tenant">
+
+	<div class="row">
+		<div class="col-sm-4">
+			<div class="box-info">
+				<!-- User profile avatar, name and location -->
+				<div class="user-profile-sidebar">
+					<h2>Profile</h2>
+					<div class="row">
+						<div class="col-md-8">
+							<!-- User identity -->
+							<div class="user-identity">
+								<h4><strong>{{first_name}} {{last_name}}</strong></h4>
+							</div><!-- End div .user-identity -->
+						</div>
+					</div>
+				</div><!-- End div .user-profile-sidebar -->
+				
+
+				<div class="row">
+							<div class="col-sm-12">
+								<h5><strong>CONTACT</strong> INFORMATION</h5>
+									<address>
+										<strong>Phone</strong><br>
+										<abbr title="Phone">{{main_telephone_number}}</abbr>
+									</address>
+									<address>
+										<strong>Alt Phone</strong><br>
+										<abbr title="Phone">{{alt_telephone_number}}</abbr>
+									</address>
+									<address>
+										<strong>Address</strong><br>
+										{{address_street}}<br/>
+										{{address_city}} {{address_state}} {{address_postal_code}}
+									</address>
+							</div>
+				</div>
+
+				<!-- User button -->
+				<div class="user-button">
+					<div class="row">
+						{{#if isEnabled.documents}}
+							<div class="col-md-6">
+								<button type="button" class="btn btn-primary btn-sm btn-block"><i class="fa fa-envelope"></i> Add note</button>
+							</div>
+						{{/if}}
+
+						
+							<div class="col-md-6">
+								{{#link-to 'payments'}}<button type="button" class="btn btn-default btn-sm btn-block"><i class="fa fa-money"></i> Make payment</button>{{/link-to}}
+							</div>
+						
+					</div>
+				</div><!-- End div .user-button -->
+			</div><!-- End div .box-info -->
+		</div><!-- End div .col-sm-4 -->
+		
+
+
+		<div class="col-sm-8">
+			<div class="box-info full">
+				<!-- Nav tab -->
+				<ul class="nav nav-tabs nav-justified">
+				  <li class="active"><a href="#about" data-toggle="tab"><i class="fa fa-user"></i> Lease</a></li>
+				  <li><a href="#user-activities" data-toggle="tab"><i class="fa fa-laptop"></i>Notes </a></li>
+				</ul>
+				<!-- End nav tab -->
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<!-- Tab about -->
+					<div class="tab-pane active animated fadeInRight" id="about">
+						
+						{{#each leaseEntry in lease}}
+							<div class="user-profile-content">
+								<h5><strong>{{leaseEntry.start_date}} to {{leaseEntry.end_date}}</strong></h5>
+								<hr>
+								<div class="row">
+									<div class="col-sm-6">
+										<h5><strong>DEPOSIT</strong></h5>
+											
+											Deposit:<abbr>{{leaseEntry.required_deposit_amount}}</abbr>
+											<br/>
+											First Month Rent:{{leaseEntry.first_month_rent_required}}
+											<br/>
+											Last Month Rent:{{leaseEntry.last_month_rent_required}}
+											
+									</div>
+									<div class="col-sm-6">
+										<h5><strong>RENT</strong></h5>
+										<p>Monthly Rent: {{leaseEntry.monthly_rental_cost}}</p>
+										<p>Water Charge: {{leaseEntry.water_charges}}</p>
+										<p>Fuel Adjustment: {{leaseEntry.fuel_adjustment}}</p>
+										<p>MCI Improvement: {{leaseEntry.mci_improvement}}</p>
+										<p>Estate Tax: {{leaseEntry.estate_tax}}</p>
+										
+									</div>
+								</div><!-- End div .row -->
+							</div>
+						{{/each}}
+
+					</div><!-- End div .tab-pane -->
+				</div><!-- End div .tab-content -->
+			</div><!-- End div .box-info -->
+		</div><!-- End div .col-sm-8 -->
+	</div><!-- End div row -->
+</script>

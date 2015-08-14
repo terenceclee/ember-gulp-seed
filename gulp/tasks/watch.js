@@ -41,7 +41,7 @@ function Watch() {
   // Watch Templates
   parent.gulp.watch(parent.CONFIG.templates, function() {
 
-    return parent.sequence('Templates', 'Reload');
+    return parent.sequence('Index', 'Reload');
 
   });
 

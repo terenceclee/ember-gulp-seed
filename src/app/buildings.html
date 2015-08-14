@@ -1,0 +1,45 @@
+
+<script type="text/x-handlebars" data-template-name="buildings">
+<div class="box-info">
+	<h2>Buildings</h2>
+<div class="table-responsive">
+						<table data-sortable="" class="table" data-sortable-initialized="true">
+							<thead>
+								<tr>
+									<th>Name</th>
+                                    <th>Address</th>
+									<th>Units</th>
+									<th>Floors</th>
+									<th>Status</th>
+									<th data-sortable="false">Action</th>
+								</tr>
+							</thead>
+							
+							<tbody>
+							{{#each building in model}}
+				                <tr>
+				                  <td>
+				                    {{#link-to 'building' building.id}} {{building.name}} {{/link-to}}
+				                  </td>
+				                  <td> {{building.address_street}} </td>
+				                  <td>{{building.number_of_units}}</td>
+				                  <td>{{building.number_of_floors}}</td>
+				                  <td><span class="label label-success">Active</span></td>
+				                  <td>						
+				                  	<div class="btn-group btn-group-xs">
+										{{#if isEnabled.payments}}
+											<a data-toggle="tooltip" title="Payment" class="btn btn-default"><i class="fa fa-money"></i></a>
+										{{/if}}
+										
+										
+											<span data-toggle="tooltip" title="Edit" class="btn btn-default"><i class="fa fa-edit"></i></span>
+										
+									</div>
+								  </td>
+				                </tr>
+			            	{{/each}}
+							</tbody>
+						</table>
+					</div>
+</div>
+</script>

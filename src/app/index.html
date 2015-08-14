@@ -10,6 +10,27 @@
         <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
 
         <!-- @if ENVIRONMENT == 'DEVELOPMENT' -->
+
+		<!-- LANCENG CSS -->
+		<link rel="stylesheet" media="screen" href="/bootstrap/dist/css/bootstrap.css"">
+		<link href="/lanceng/style.css" rel="stylesheet">
+		<link href="/lanceng/style-responsive.css" rel="stylesheet">
+		<link href="/ember-calendar/dist/ember-calendar.css" rel="stylesheet">
+
+		<!-- VENDOR -->
+		<link href="/lanceng/animate.css" rel="stylesheet">
+		<link href="/lanceng/third/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+		<link href="/lanceng/third/weather-icon/css/weather-icons.min.css" rel="stylesheet">
+		<link href="/lanceng/third/morris/morris.css" rel="stylesheet">
+		<link href="/lanceng/third/nifty-modal/css/component.css" rel="stylesheet">
+		<link href="/lanceng/third/sortable/sortable-theme-bootstrap.css" rel="stylesheet">
+		<link href="/lanceng/third/icheck/skins/minimal/grey.css" rel="stylesheet">
+		<link href="/lanceng/third/select/bootstrap-select.min.css" rel="stylesheet">
+		<link href="/lanceng/third/summernote/summernote.css" rel="stylesheet">
+		<link href="/lanceng/third/magnific-popup/magnific-popup.css" rel="stylesheet">
+		<link href="/lanceng/third/datepicker/css/datepicker.css" rel="stylesheet">
+
+
         <!-- @endif -->
         <!-- @if ENVIRONMENT == 'PRODUCTION' -->
         <!-- @endif -->
@@ -21,8 +42,7 @@
 
         <!-- Add your site or application content here -->
 	<script type="text/x-handlebars">
-		<h2>Welcome to Ember.js</h2>
-		{{outlet}}
+	@@include('./lanceng.html')
 	</script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
@@ -35,11 +55,67 @@
             ga('create','UA-XXXXX-X','auto');ga('send','pageview');
         </script>
         <!-- @if ENVIRONMENT == 'DEVELOPMENT' -->
-	<script type="text/javascript" src="/jquery/dist/jquery.js"></script>
-	<script type="text/javascript" src="/handlebars/handlebars.js"></script>
-	<script type="text/javascript" src="/ember/ember.js"></script>
+		<script type="text/javascript" src="/jquery/dist/jquery.js"></script>
+		<script type="text/javascript" src="/handlebars/handlebars.js"></script>
+		<script type="text/javascript" src="/ember/ember.js"></script>
+		<script src="/bootstrap/dist/js/bootstrap.js"></script>
+		<script type="text/javascript" src="/moment/moment.js"></script>
+		<script src="/ember-calendar/dist/ember-calendar.js"></script>
+		<script src="/ember-model/ember-model.js"></script>
+		<script type="text/javascript" src="/app/app.js"></script>
+
+		<!-- VENDOR - lanceng javascript includes -->
+
+		<!-- Slimscroll js -->
+		<script src="/lanceng/third/slimscroll/jquery.slimscroll.min.js"></script>
+
+		<!-- Morris js -->
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+		<script src="/lanceng/third/morris/morris.js"></script>
+
+		<!-- Nifty modals js -->
+		<script src="/lanceng/third/nifty-modal/js/classie.js"></script>
+		<script src="/lanceng/third/nifty-modal/js/modalEffects.js"></script>
+
+		<!-- Sortable js -->
+		<script src="/lanceng/third/sortable/sortable.min.js"></script>
+
+		<!-- Bootstrao selectpicker js -->
+		<script src="/lanceng/third/select/bootstrap-select.min.js"></script>
+
+		<!-- Summernote js -->
+		<script src="/lanceng/third/summernote/summernote.js"></script>
+
+		<!-- Magnific popup js -->
+		<script src="/lanceng/third/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+		<!-- Bootstrap file input js -->
+		<script src="/lanceng/third/input/bootstrap.file-input.js"></script>
+
+		<!-- Bootstrao datepicker js -->
+		<script src="/lanceng/third/datepicker/js/bootstrap-datepicker.js"></script>
+
+		<!-- Icheck js -->
+		<script src="/lanceng/third/icheck/icheck.min.js"></script>
+
+		<!-- Form wizard js -->
+		<script src="/lanceng/third/wizard/jquery.snippet.js"></script>
+		<script src="/lanceng/third/wizard/jquery.easyWizard.js"></script>
+		<script src="/lanceng/third/wizard/scripts.js"></script>
+		<!-- lance ng -->
+		<script src="/lanceng/lanceng.js"></script>
+
         <!-- @endif -->
         <!-- @if ENVIRONMENT == 'PRODUCTION' -->
         <!-- @endif -->
+			@@include('./ember.html')
+			@@include('./tenant.html')
+			@@include('./tenants.html')
+			@@include('./corporation.html')
+			@@include('./corporations.html')	
+			@@include('./buildings.html')		
+			@@include('./building.html')	
+			@@include('./unit.html')
+			@@include('./lease.html')
     </body>
 </html>

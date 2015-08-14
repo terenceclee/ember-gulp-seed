@@ -1,0 +1,158 @@
+<div class="container">
+    <!--lancengheader()-->
+    <div class="logo-brand header sidebar rows">
+        <div class="logo">
+            <h1><a href="#fakelink">Rentline 2.0</a></h1>
+        </div>
+    </div>
+
+    <!-- BEGIN SIDEBAR -->
+    <div class="left side-menu">
+
+        <div class="body rows scroll-y">
+
+            <!-- Scrolling sidebar -->
+            <div class="sidebar-inner slimscroller">
+                <!-- User Session -->
+                <div class="media">
+                    <a class="pull-left" href="#fakelink">
+                        <!--{AVATAR GOES HERE}-->
+                     </a>
+                     <div class="media-body">
+                        <h4 class="media-heading"><strong>{USER NAME}</strong></h4>
+                        <a href="#">Edit</a>
+                        <a class="md-trigger" @*data-modal="logout-modal-alt"*@>Logout</a>
+                    </div><!-- End div .media-body -->
+                </div><!-- End div .media -->
+
+
+                <!-- Search form -->
+                {{#if isEnabled.search}}
+                    <div id="search">
+                        <form role="form">
+                            <input type="text" class="form-control search" placeholder="Search here...">
+                            <i class="fa fa-search"></i>
+                        </form>
+                    </div><!-- End div #search -->
+                {{/if}}
+
+                <!-- Sidebar menu -->
+                <div id="sidebar-menu">
+                    <ul>
+                        <li>{{#link-to 'home'}}<i class="fa fa-home"></i>Home{{/link-to}}</li>
+                        {{#if isEnabled.payments}}
+                            <!--<li>{{#link-to 'payments'}}<i class="fa fa-money"></i>Payments{{/link-to}}</li>-->
+                        {{/if}}
+                       
+                        <li>{{#link-to 'tenants'}}<i class="fa fa-users"></i>Tenants{{/link-to}}</li>
+                       
+                        <li>{{#link-to 'buildings'}}<i class="fa fa-building-o"></i>Buildings{{/link-to}}</li>
+                        <li>{{#link-to 'corporations'}}<i class="fa fa-folder"></i>Corporations{{/link-to}}</li>
+                        {{#if isEnabled.services}}
+                            <li>{{#link-to 'services'}}<i class="fa fa-wrench"></i>Services{{/link-to}}</li>
+                        {{/if}}
+                       
+                        {{#if isEnabled.documents}}
+                            <li>{{#link-to 'documents'}}<i class="fa fa-folder"></i>Documents{{/link-to}}</li>
+                        {{/if}}
+
+                        <hr/>
+
+                        <!--<li>{{#link-to 'documents'}}<i class="fa fa-folder"></i>Add tenant{{/link-to}}</li> -->
+                        <li>{{#link-to 'lease'}}<i class="fa fa-folder"></i>Add lease{{/link-to}}</li>
+                        <!--
+                       
+                        <li>{{#link-to 'documents'}}<i class="fa fa-folder"></i>Add building{{/link-to}}</li>
+                        <li>{{#link-to 'documents'}}<i class="fa fa-folder"></i>Add unit{{/link-to}}</li>
+                        -->
+
+                    </ul>
+                    <div class="clear"></div>
+                </div><!-- End div #sidebar-menu -->
+            </div><!-- End div .sidebar-inner .slimscroller -->
+        </div><!-- End div .body .rows .scroll-y -->
+    </div><!-- END SIDEBAR -->
+
+
+
+
+    <!--//lancengheader()-->
+    <div class="right content-page" id="content">
+        <!--contentheader()-->
+
+        <!-- BEGIN CONTENT HEADER -->
+        <div class="header content rows-content-header">
+
+            <!-- Button mobile view to collapse sidebar menu -->
+            <button class="button-menu-mobile show-sidebar">
+                <i class="fa fa-bars"></i>
+            </button>
+
+            <!-- BEGIN NAVBAR CONTENT-->
+            <div class="navbar navbar-default" role="navigation">
+                <div class="container">
+                    <!-- Navbar header -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <i class="fa fa-angle-double-down"></i>
+                        </button>
+                    </div><!-- End div .navbar-header -->
+
+                    <!-- Navbar collapse -->
+                    <div class="navbar-collapse collapse">
+                        <!-- Right navbar -->
+                        <ul class="nav navbar-nav navbar-right top-navbar">
+                            {{#if isEnabled.notifications}}
+                                <!-- Dropdown notifications -->
+                                <li class="dropdown">
+                                    <a href="#fakelink" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i><span class="label label-danger absolute">24</span></a>
+                                    <ul class="dropdown-menu dropdown-message animated half slideInDown">
+                                        <!-- Dropdown notification header -->
+                                        <li class="dropdown-header notif-header">New Notifications</li>
+                                        <li class="divider"></li>
+
+                                        <!-- Dropdown notification body -->
+                                        <li class="unread">
+                                            <a href="#fakelink">
+                                                <p><strong>John Doe</strong> Uploaded a photo <strong>&#34;DSC000254.jpg&#34;</strong>
+                                                    <br /><i>2 minutes ago</i></p>
+                                            </a>
+                                        </li>
+                                        <li>
+                                        <a href="#fakelink">
+                                            <p><strong>Annisa</strong> Posted an article  <strong>&#34;Yogyakarta never ending Asia&#34;</strong>
+                                                <br /><i>an hour ago</i></p>
+                                            </a>
+                                        </li>
+                                        <!-- Dropdown notification footer -->
+                                        <li class="dropdown-footer"><a href="#fakelink"><i class="fa fa-refresh"></i> Refresh</a></li>
+                                    </ul>
+                                </li>
+                                 <!-- End Dropdown notifications -->
+                             {{/if}}
+
+
+                            <!-- Dropdown User session -->
+                            <li class="dropdown">
+                                <a href="#fakelink" class="dropdown-toggle" data-toggle="dropdown">Hello, <strong>{USER NAME}</strong> <i class="fa fa-chevron-down i-xs"></i></a>
+                                <ul class="dropdown-menu animated half flipInX">
+                                    {{#if isEnabled.history}}
+                                        <li><a href="#fakelink">History</a></li>
+                                    {{/if}}
+                                    <li><a class="md-trigger" @*data-modal="logout-modal"*@>Logout</a></li>
+                                </ul>
+                            </li>
+                            <!-- End Dropdown User session -->
+                        </ul>
+                    </div><!-- End div .navbar-collapse -->
+                </div><!-- End div .container -->
+            </div><!-- END NAVBAR CONTENT-->
+        </div>
+        <!-- END CONTENT HEADER -->
+
+        <div class="body content rows scroll-y">
+             {{outlet main}}
+        </div>
+    </div><!-- END RIGHT CONTENT-->
+</div><!-- END CONTAINTER-->
+

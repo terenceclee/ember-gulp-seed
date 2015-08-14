@@ -10,6 +10,9 @@ var parent = require.main.app;
  */
 function Index(){
 	return parent.gulp.src(parent.CONFIG.index)
+		.pipe(parent.fileinclude({
+			prefix: '@@'
+		}))
 		.pipe(parent.preprocess({
 			context: {
 				ENVIRONMENT: parent.dist ? 'PRODUCTION' : 'DEVELOPMENT',
@@ -52,19 +55,28 @@ function HeadScripts(){
  * Runs task to prepare main scripts
  */
 function MainScripts(){
-        return parent.gulp.src( parent.CONFIG.appScripts )
+        return parent.gulp.src( parent.CONFIG.scripts)
                 //.pipe(parent.concat('app' + (parent.dist ? '.min' : '') + '.js'))
                 //.pipe(parent.gulpIf(parent.dist , parent.uglify()))
                 .pipe(parent.gulp.dest((parent.dist ? parent.CONFIG.distRoot : parent.CONFIG.tmpRoot) + '/app'));
 }
 
+
+
+function Lanceng(){
+        return parent.gulp.src('./lanceng/**', {base: "."})
+                .pipe(parent.gulp.dest(parent.CONFIG.tmpRoot) );
+}
+
+
 // Register Tasks
 parent.gulp.task('Index', Index);
-parent.gulp.task('App.Assets', ['Vendor', 'Index']);
+parent.gulp.task('Lanceng', Lanceng);
+parent.gulp.task('App.Assets', ['Vendor', 'Lanceng', 'Index']);
 
 parent.gulp.task('HeadScripts', HeadScripts);
 parent.gulp.task('MainScripts', MainScripts);
-parent.gulp.task('App.Scripts');
+parent.gulp.task('App.Scripts',['MainScripts']);
 
 parent.gulp.task('SASS', SASS);
 parent.gulp.task('LESS', LESS);

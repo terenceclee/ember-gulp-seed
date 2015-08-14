@@ -13,6 +13,7 @@ module.exports = {
 	sass: './src/app/*.sass',
 	less: './src/app/*.less',
 	index: './src/app/index.html',
+	templates: './src/app/*.html',
 	vendor: './vendor/**',
 	scripts: ['./src/app/**/*.js']
 };

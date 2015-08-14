@@ -1,0 +1,115 @@
+<script type="text/x-handlebars" data-template-name="building">
+
+<div class="page-heading">
+	<h1>{{model.address_street}} ({{model.name}})</h1> 
+</div>
+<div class="row">
+	<div class="col-sm-4">  
+
+
+		<div class="box-info">
+			<!-- User profile avatar, name and location -->
+			<div class="user-profile-sidebar">
+				<h5>Profile</h5>
+				
+				<div class="row" style="display:none;">
+					<div class="col-md-4">
+						Image Placeholder
+					</div>
+					<div class="col-md-8">
+						<!-- User identity -->
+						<div class="user-identity">
+							<p><i class="fa fa-map-marker"></i> Google map</p>
+						</div><!-- End div .user-identity -->
+					</div>
+				</div>
+			</div><!-- End div .user-profile-sidebar -->
+			
+			<!-- Account status -->
+			<div class="account-status-data">
+				<div class="row">
+					<div class="col-md-6">
+						<h5><strong>{{number_of_units}}</strong> units</h5>
+					</div>
+					<div class="col-md-6">
+						<h5><strong>{{number_of_floors}}</strong> floors</h5>
+					</div>
+				</div>
+			</div><!-- End div .account-status-data -->
+
+			<!-- User button -->
+			<div class="user-button">
+				<div class="row">
+					<div class="col-md-6">
+						<button type="button" class="btn btn-primary btn-sm btn-block"><i class="fa fa-envelope"></i> Add note</button>
+					</div>
+					{{#if isEnabled.services}}
+					<div class="col-md-6">
+						<button type="button" class="btn btn-default btn-sm btn-block"><i class="fa fa-wrench"></i> Add service</button>
+					</div>
+					{{/if}}
+				</div>
+			</div><!-- End div .user-button -->	
+		</div><!-- End div .box-info -->
+
+		<div class="box-info">
+			<!-- Begin table scroller -->
+			<!--<div class="table-scroll">-->
+				<div class="table-responsive">
+					<table data-sortable class="table table-hover table-striped">
+						<thead>
+							<tr>
+								<th>Unit</th>
+								<th>Status</th>
+							</tr>
+						</thead>
+										
+						<tbody>
+							{{#each u in model.unit}}
+							<tr>
+								<td> {{#link-to 'unit' u}}{{u.name}}{{/link-to}}</td>
+								<td><span class="label label-success">Active</span></td>
+							</tr>
+							{{/each}}	
+						</tbody>
+					</table>
+				</div><!-- End div .table-responsive -->
+			<!--</div>--><!-- End div .table-scroll -->
+			<!-- End table scroller -->
+		</div>
+							
+	</div><!-- close col-->
+
+	<div class="col-sm-8">
+
+		<div class="box-info full">
+			<!-- Nav tab -->
+			<ul class="nav nav-tabs nav-justified">
+			  <li class="active"><a href="#my-timeline" data-toggle="tab"><i class="fa fa-users"></i> Unit Detail</a></li>
+			  <li><a href="#mymessage" data-toggle="tab"><i class="fa fa-envelope"></i> Notes</a></li>
+			</ul>
+			<!-- End nav tab -->
+
+			<!-- Tab panes -->
+			<div class="tab-content">
+				
+				
+				<!-- Tab timeline -->
+				<div class="tab-pane animated fadeInRight active" id="my-timeline">
+					{{outlet}}
+				</div><!-- End div .tab-pane -->
+				<!-- End Tab timeline -->
+		
+				
+				<!-- Tab user messages -->
+				<div class="tab-pane animated fadeInRight" id="mymessage">
+				</div><!-- End div .tab-pane -->
+				<!-- End Tab user messages -->
+
+
+			</div><!-- End div .tab-content -->
+	</div>
+
+	</div><!-- div col 8-->
+</div><!-- end row-->
+</script>

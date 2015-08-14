@@ -1,0 +1,155 @@
+<script type="text/x-handlebars" data-template-name="corporation">
+
+<!--
+	<div class="page-heading animated fadeInDownBig">
+						<h1></h1>
+	</div>
+-->
+
+	<div class="row">
+		<div class="col-sm-4">
+			<div class="box-info">
+				<!-- User profile avatar, name and location -->
+				<div class="user-profile-sidebar">
+					<h2>Profile</h2>
+					<div class="row">
+						<div class="col-md-8">
+							<!-- User identity -->
+							<div class="user-identity">
+								<h4><strong>{{first_name}} {{last_name}}</strong></h4>
+							</div><!-- End div .user-identity -->
+						</div>
+					</div>
+				</div><!-- End div .user-profile-sidebar -->
+				<!-- Account status -->
+				
+
+				<div>
+<!--
+					<div class="row">
+						<div class="col-md-6">
+							<h5>Tenant since <strong>1984</strong></h5>
+						</div>
+						<div class="col-md-6">
+							<h5>Credit Rating: <strong>Excellent</strong></h5>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<h5><strong>0</strong> Service appointments</h5>
+						</div>
+						<div class="col-md-6">
+							<h5><strong>0</strong> Late payments</h5>
+						</div>
+					</div>
+-->
+				</div><!-- End div .account-status-data -->
+				<!-- User button -->
+				<div class="user-button">
+					<div class="row">
+						{{#if isEnabled.documents}}
+							<div class="col-md-6">
+								<button type="button" class="btn btn-primary btn-sm btn-block"><i class="fa fa-envelope"></i> Add note</button>
+							</div>
+						{{/if}}
+
+						{{#if isEnabled.payments}}
+							<div class="col-md-6">
+								<button type="button" class="btn btn-default btn-sm btn-block"><i class="fa fa-money"></i> Make payment</button>
+							</div>
+						{{/if}}
+					</div>
+				</div><!-- End div .user-button -->
+		
+			</div><!-- End div .box-info -->
+		</div><!-- End div .col-sm-4 -->
+		
+		<div class="col-sm-8">
+			<div class="box-info full">
+				<!-- Nav tab -->
+				<ul class="nav nav-tabs nav-justified">
+				  <li class="active"><a href="#about" data-toggle="tab"><i class="fa fa-user"></i> About</a></li>
+				  	{{#if isEnabled.documents}}
+				  		<li><a href="#user-activities" data-toggle="tab"><i class="fa fa-laptop"></i>Notes/Actions </a></li>
+					{{/if}}
+				</ul>
+				<!-- End nav tab -->
+
+				<!-- Tab panes -->
+				<div class="tab-content">
+					<!-- Tab about -->
+					<div class="tab-pane active animated fadeInRight" id="about">
+						<div class="user-profile-content">
+							<h5><strong>UNIT</strong> INFORMATION</h5>
+
+							<div id="social">
+								{{#link-to 'building'}}207 Canal St. 3rd flr.{{/link-to}}
+							</div><!-- End div #social -->
+
+							<hr>
+							<div class="row">
+								<div class="col-sm-6">
+									<h5><strong>CONTACT</strong> INFORMATION</h5>
+										<address>
+											<strong>Phone</strong><br>
+											<abbr title="Phone">+62 857 123 4567</abbr>
+										</address>
+										<address>
+											<strong>Email</strong><br>
+											<a href="mailto:#">first.last@example.com</a>
+										</address>
+										<address>
+											<strong>Address</strong><br>
+											<a href="http://ariecupu.com">http://ariecupu.com</a>
+										</address>
+								</div>
+								<div class="col-sm-6">
+									{{#if isEnabled.payments}}
+									<h5><strong>PAYMENT</strong> INFORMATION</h5>
+									<p>Next payment due: </p>
+									<p>Balance:</p>
+									<p>Lease expires: 2015, October</p>
+									{{/if}}
+								</div>
+							</div><!-- End div .row -->
+						</div><!-- End div .user-profile-content -->
+					</div><!-- End div .tab-pane -->
+					<!-- End Tab about -->
+					
+					
+					{{#if isEnabled.documents}}
+					<!-- Tab user activities -->
+					<div class="tab-pane animated fadeInRight" id="user-activities">
+						<div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 500px;"><div class="scroll-user-widget" style="overflow: hidden; width: auto; height: 500px;">
+							<ul class="media-list">
+								<li class="media">
+									<a href="#fakelink">
+									<p><strong>John Doe</strong> Uploaded a photo <strong>"DSC000254.jpg"</strong>
+									<br><i>2 minutes ago</i></p>
+									</a>
+								</li>
+								<li class="media">
+									<a href="#fakelink">
+									<p><strong>John Doe</strong> Created an photo album  <strong>"Indonesia Tourism"</strong>
+									<br><i>8 minutes ago</i></p>
+									</a>
+								</li>
+								<li class="media">
+									<a href="#fakelink">
+									<p><strong>Annisa</strong> Posted an article  <strong>"Yogyakarta never ending Asia"</strong>
+									<br><i>an hour ago</i></p>
+									</a>
+								</li>
+							</ul>
+						</div><div class="slimScrollBar" style="width: 3px; position: absolute; top: 0px; opacity: 0.4; display: block; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; z-index: 99; right: 1px; background: rgb(134, 134, 134);"></div><div class="slimScrollRail" style="width: 3px; height: 100%; position: absolute; top: 0px; display: none; border-top-left-radius: 7px; border-top-right-radius: 7px; border-bottom-right-radius: 7px; border-bottom-left-radius: 7px; opacity: 0.3; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div></div><!-- End div .scroll-user-widget -->
+					</div><!-- End div .tab-pane -->
+					<!-- End Tab user activities -->
+					{{/if}}
+					
+					<!-- Tab user messages -->
+					<!-- End Tab user messages -->
+				</div><!-- End div .tab-content -->
+			</div><!-- End div .box-info -->
+		</div><!-- End div .col-sm-8 -->
+	</div><!-- End div row -->
+</script>
